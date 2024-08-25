@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>服务项目 - 宾顿华人协会</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Free Website Template" name="keywords" />
+        <meta content="Free Website Template" name="description" />
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/favicon.ico" rel="icon" />
 
         <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
         <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+        <link href="lib/animate/animate.min.css" rel="stylesheet" />
+        <link
+            href="lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet"
+        />
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />
 
         <style>
             /* 调整二维码的大小和位置 */
@@ -49,6 +61,51 @@
 
             .footer-link h2 {
                 text-align: right;
+            }
+
+            #wechat-modal {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                #wechat-qr {
+                    display: none !important;
+                }
+
+                #wechat-modal {
+                    display: none;
+                    z-index: 1000;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: white;
+                    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    text-align: center;
+                    transition: transform 0.3s ease-out;
+                    transform: translateY(100%);
+                }
+
+                #wechat-modal.show {
+                    transform: translateY(0);
+                    display: block;
+                }
+
+                #wechat-modal img {
+                    width: 172px;
+                    height: 229px;
+                    margin-bottom: 15px;
+                }
+
+                .close-button {
+                    position: absolute;
+                    color: black;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
             }
         </style>
     </head>
@@ -89,18 +146,39 @@
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand">
-                    <img src="img/logo.png" alt="Brampton Chinese Culture Association">
+                    <img
+                        src="img/logo.png"
+                        alt="Brampton Chinese Culture Association"
+                    />
                 </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <button
+                    type="button"
+                    class="navbar-toggler"
+                    data-toggle="collapse"
+                    data-target="#navbarCollapse"
+                >
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div
+                    class="collapse navbar-collapse justify-content-between"
+                    id="navbarCollapse"
+                >
                     <div class="navbar-nav ml-auto">
-                        <a href="index_zh.html" class="nav-item nav-link">首页</a>
-                        <a href="about_zh.html" class="nav-item nav-link">关于我们</a>
-                        <a href="service_zh.html" class="nav-item nav-link active">服务项目</a>
-                        <a href="event_zh.html" class="nav-item nav-link">近期活动</a>
+                        <a href="index_zh.html" class="nav-item nav-link"
+                            >首页</a
+                        >
+                        <a href="about_zh.html" class="nav-item nav-link"
+                            >关于我们</a
+                        >
+                        <a
+                            href="service_zh.html"
+                            class="nav-item nav-link active"
+                            >服务项目</a
+                        >
+                        <a href="event_zh.html" class="nav-item nav-link"
+                            >近期活动</a
+                        >
                         <!-- <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
@@ -112,15 +190,20 @@
                                 <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
                             </div>
                         </div> -->
-                        <a href="contact_zh.html" class="nav-item nav-link">联系我们</a>
-                        <a href="service_zh.html" class="nav-item nav-link nav-language">English</a>
+                        <a href="contact_zh.html" class="nav-item nav-link"
+                            >联系我们</a
+                        >
+                        <a
+                            href="service_zh.html"
+                            class="nav-item nav-link nav-language"
+                            >English</a
+                        >
                     </div>
                 </div>
             </div>
         </div>
         <!-- Nav Bar End -->
-        
-        
+
         <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
@@ -136,8 +219,7 @@
             </div>
         </div>
         <!-- Page Header End -->
-        
-        
+
         <!-- Service Start -->
         <div class="service">
             <div class="container">
@@ -153,7 +235,9 @@
                             </div>
                             <div class="service-text">
                                 <h3>合唱团</h3>
-                                <p>我们的合唱团汇集了热爱歌唱的个人，演唱传统中国歌曲和现代音乐。</p>
+                                <p>
+                                    我们的合唱团汇集了热爱歌唱的个人，演唱传统中国歌曲和现代音乐。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -164,7 +248,9 @@
                             </div>
                             <div class="service-text">
                                 <h3>舞蹈团</h3>
-                                <p>我们的舞蹈团展示各种传统和现代中国舞蹈，在各类文化活动和节日中表演。</p>
+                                <p>
+                                    我们的舞蹈团展示各种传统和现代中国舞蹈，在各类文化活动和节日中表演。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +261,9 @@
                             </div>
                             <div class="service-text">
                                 <h3>玫瑰谷单身俱乐部</h3>
-                                <p>一个充满活力的单身社交俱乐部，为您提供认识新朋友和参与各种有趣活动的机会。</p>
+                                <p>
+                                    一个充满活力的单身社交俱乐部，为您提供认识新朋友和参与各种有趣活动的机会。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +274,9 @@
                             </div>
                             <div class="service-text">
                                 <h3>旅游团</h3>
-                                <p>我们组织文化旅游和旅行，为您提供探索新地方和体验不同文化的机会。</p>
+                                <p>
+                                    我们组织文化旅游和旅行，为您提供探索新地方和体验不同文化的机会。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -197,7 +287,9 @@
                             </div>
                             <div class="service-text">
                                 <h3>留学及移民服务</h3>
-                                <p>我们提供全面的支持，帮助您寻求海外教育机会或移民事务。</p>
+                                <p>
+                                    我们提供全面的支持，帮助您寻求海外教育机会或移民事务。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -208,16 +300,17 @@
                             </div>
                             <div class="service-text">
                                 <h3>社交活动和慈善表演</h3>
-                                <p>我们全年举办各种社交活动和表演，旨在增强社区精神和回馈社会。</p>
+                                <p>
+                                    我们全年举办各种社交活动和表演，旨在增强社区精神和回馈社会。
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Service End -->
-        
 
         <!-- Causes Start -->
         <!-- <div class="causes">
@@ -328,19 +421,21 @@
         </div> -->
         <!-- Causes End -->
 
-
         <!-- Footer Start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-contact">
-                            <h2>Brampton Chinese Cultural Association</h2>
+                            <h2>宾顿华人协会</h2>
                             <p>
                                 <i class="fa fa-map-marker-alt"></i>50 Kennedy
                                 Rd S, Brampton, On, Canada
                             </p>
-                            <p><i class="fa fa-phone-alt"></i>(647) 498-2828</p>
+                            <p>
+                                <i class="fa fa-phone-alt"></i>(647) 498-2828
+                                (text only)
+                            </p>
                             <p>
                                 <i class="fa fa-envelope"></i>bcca618@gmail.com
                             </p>
@@ -348,14 +443,14 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-link">
-                            <h2>Popular Links</h2>
-                            <a href="">About Us</a>
-                            <a href="">Contact Us</a>
+                            <h2>链接</h2>
+                            <a href="./about_zh.html">关于我们</a>
+                            <a href="./contact_zh.html">联系我们</a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <div class="footer-link">
-                            <h2>Follow Us</h2>
+                            <h2>关注我们</h2>
                             <div class="social-icons">
                                 <a
                                     href="https://www.facebook.com/profile.php?id=100088570307661"
@@ -368,7 +463,6 @@
                                 <a href="#" id="wechat-link">
                                     <i class="fab fa-weixin"></i>
                                 </a>
-                                <!-- WeChat QR code -->
                                 <img
                                     src="/img/wechat.jpg"
                                     id="wechat-qr"
@@ -376,6 +470,10 @@
                                 />
                             </div>
                         </div>
+                    </div>
+                    <div id="wechat-modal">
+                        <span class="close-button">&times;</span>
+                        <img src="/img/wechat.jpg" alt="WeChat QR Code" />
                     </div>
                 </div>
             </div>
@@ -402,7 +500,7 @@
 
         <!-- Back to top button -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
+
         <!-- Pre Loader -->
         <div id="loader" class="show">
             <div class="loader"></div>
@@ -416,7 +514,7 @@
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/parallax/parallax.min.js"></script>
-        
+
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
@@ -427,45 +525,70 @@
         <!-- WeChat QR Code Display Script -->
         <script>
             const wechatLink = document.getElementById('wechat-link')
-            const wechatQr = document.getElementById('wechat-qr')
+            const wechatQR = document.getElementById('wechat-qr')
+            const wechatModal = document.getElementById('wechat-modal')
+            const closeButton = document.querySelector('.close-button')
+            const isMobile = window.matchMedia('(max-width: 768px)').matches
             let qrTimeout
 
-            // Prevent default action of the WeChat link
-            wechatLink.addEventListener('click', (event) => {
+            function showQR(event) {
                 event.preventDefault()
-            })
-
-            // Display QR code when hovering over WeChat link
-            wechatLink.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-                const rect = wechatLink.getBoundingClientRect()
-                wechatQr.style.display = 'block'
-                wechatQr.style.left = `${rect.right + 10}px` // 调整为图标的右侧显示，并留出10px间距
-                wechatQr.style.top = `${rect.top - 150}px` // 调整为图标的上方显示
-                setTimeout(() => {
-                    wechatQr.style.opacity = '1'
-                }, 10)
-            })
-
-            // 延迟隐藏二维码，防止闪烁
-            const hideQrWithDelay = () => {
-                qrTimeout = setTimeout(() => {
-                    wechatQr.style.opacity = '0'
+                if (isMobile) {
+                    wechatModal.style.display = 'block'
                     setTimeout(() => {
-                        wechatQr.style.display = 'none'
-                    }, 300)
-                }, 200)
+                        wechatModal.classList.add('show')
+                    }, 10)
+                } else {
+                    clearTimeout(qrTimeout)
+                    const rect = wechatLink.getBoundingClientRect()
+                    wechatQR.style.display = 'block'
+                    wechatQR.style.left = `${rect.right + 10}px`
+                    wechatQR.style.top = `${rect.top - 150}px`
+                    setTimeout(() => {
+                        wechatQR.style.opacity = '1'
+                    }, 10)
+                }
             }
 
-            // Hide QR code when leaving the WeChat link
-            wechatLink.addEventListener('mouseleave', hideQrWithDelay)
+            function hideQRWithDelay() {
+                if (!isMobile) {
+                    qrTimeout = setTimeout(() => {
+                        wechatQR.style.opacity = '0'
+                        setTimeout(() => {
+                            wechatQR.style.display = 'none'
+                        }, 300)
+                    }, 200)
+                }
+            }
 
-            // 防止鼠标在二维码和图标之间移动时闪烁
-            wechatQr.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-            })
+            function hideModal() {
+                wechatModal.classList.remove('show')
+                setTimeout(() => {
+                    wechatModal.style.display = 'none'
+                }, 300)
+            }
 
-            wechatQr.addEventListener('mouseleave', hideQrWithDelay)
+            wechatLink.addEventListener('click', showQR)
+
+            if (!isMobile) {
+                wechatLink.addEventListener('mouseenter', showQR)
+                wechatLink.addEventListener('mouseleave', hideQRWithDelay)
+                wechatQR.addEventListener('mouseenter', () =>
+                    clearTimeout(qrTimeout)
+                )
+                wechatQR.addEventListener('mouseleave', hideQRWithDelay)
+            } else {
+                closeButton.addEventListener('click', hideModal)
+                wechatModal.addEventListener('click', (event) => {
+                    if (event.target === wechatModal) {
+                        hideModal()
+                    }
+                })
+            }
+
+            // 预加载二维码图片
+            const img = new Image()
+            img.src = '/img/wechat.jpg'
         </script>
     </body>
 </html>

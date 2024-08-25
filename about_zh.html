@@ -62,6 +62,52 @@
             .footer-link h2 {
                 text-align: right;
             }
+
+            #wechat-modal {
+                display: none;
+            }
+
+
+            @media (max-width: 768px) {
+                #wechat-qr {
+                    display: none !important;
+                }
+
+                #wechat-modal {
+                    display: none;
+                    z-index: 1000;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: white;
+                    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    text-align: center;
+                    transition: transform 0.3s ease-out;
+                    transform: translateY(100%);
+                }
+
+                #wechat-modal.show {
+                    transform: translateY(0);
+                    display: block;
+                }
+
+                #wechat-modal img {
+                    width: 172px;
+                    height: 229px;
+                    margin-bottom: 15px;
+                }
+
+                .close-button {
+                    position: absolute;
+                    color: black;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
+            }
         </style>
     </head>
 
@@ -234,12 +280,11 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <h2>宾顿华人协会</h2>
-                            <h2>Brampton Chinese Cultural Association</h2>
                             <p>
                                 <i class="fa fa-map-marker-alt"></i>50 Kennedy
                                 Rd S, Brampton, On, Canada
                             </p>
-                            <p><i class="fa fa-phone-alt"></i>(647) 498-2828</p>
+                            <p><i class="fa fa-phone-alt"></i>(647) 498-2828 (text only)</p>
                             <p>
                                 <i class="fa fa-envelope"></i>bcca618@gmail.com
                             </p>
@@ -248,8 +293,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-link">
                             <h2>链接</h2>
-                            <a href="">关于我们</a>
-                            <a href="">联系我们</a>
+                            <a href="./about_zh.html">关于我们</a>
+                            <a href="./contact_zh.html">联系我们</a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
@@ -267,7 +312,6 @@
                                 <a href="#" id="wechat-link">
                                     <i class="fab fa-weixin"></i>
                                 </a>
-                                <!-- WeChat QR code -->
                                 <img
                                     src="/img/wechat.jpg"
                                     id="wechat-qr"
@@ -275,6 +319,10 @@
                                 />
                             </div>
                         </div>
+                    </div>
+                    <div id="wechat-modal">
+                        <span class="close-button">&times;</span>
+                        <img src="/img/wechat.jpg" alt="WeChat QR Code" />
                     </div>
                 </div>
             </div>
@@ -325,46 +373,69 @@
 
         <!-- WeChat QR Code Display Script -->
         <script>
-            const wechatLink = document.getElementById('wechat-link')
-            const wechatQr = document.getElementById('wechat-qr')
-            let qrTimeout
+            const wechatLink = document.getElementById('wechat-link');
+            const wechatQR = document.getElementById('wechat-qr');
+            const wechatModal = document.getElementById('wechat-modal');
+            const closeButton = document.querySelector('.close-button');
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            let qrTimeout;
 
-            // Prevent default action of the WeChat link
-            wechatLink.addEventListener('click', (event) => {
-                event.preventDefault()
-            })
-
-            // Display QR code when hovering over WeChat link
-            wechatLink.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-                const rect = wechatLink.getBoundingClientRect()
-                wechatQr.style.display = 'block'
-                wechatQr.style.left = `${rect.right + 10}px` // 调整为图标的右侧显示，并留出10px间距
-                wechatQr.style.top = `${rect.top - 150}px` // 调整为图标的上方显示
-                setTimeout(() => {
-                    wechatQr.style.opacity = '1'
-                }, 10)
-            })
-
-            // 延迟隐藏二维码，防止闪烁
-            const hideQrWithDelay = () => {
-                qrTimeout = setTimeout(() => {
-                    wechatQr.style.opacity = '0'
+            function showQR(event) {
+                event.preventDefault();
+                if (isMobile) {
+                    wechatModal.style.display = 'block';
                     setTimeout(() => {
-                        wechatQr.style.display = 'none'
-                    }, 300)
-                }, 200)
+                        wechatModal.classList.add('show');
+                    }, 10);
+                } else {
+                    clearTimeout(qrTimeout);
+                    const rect = wechatLink.getBoundingClientRect();
+                    wechatQR.style.display = 'block';
+                    wechatQR.style.left = `${rect.right + 10}px`;
+                    wechatQR.style.top = `${rect.top - 150}px`;
+                    setTimeout(() => {
+                        wechatQR.style.opacity = '1';
+                    }, 10);
+                }
             }
 
-            // Hide QR code when leaving the WeChat link
-            wechatLink.addEventListener('mouseleave', hideQrWithDelay)
+            function hideQRWithDelay() {
+                if (!isMobile) {
+                    qrTimeout = setTimeout(() => {
+                        wechatQR.style.opacity = '0';
+                        setTimeout(() => {
+                            wechatQR.style.display = 'none';
+                        }, 300);
+                    }, 200);
+                }
+            }
 
-            // 防止鼠标在二维码和图标之间移动时闪烁
-            wechatQr.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-            })
+            function hideModal() {
+                wechatModal.classList.remove('show');
+                setTimeout(() => {
+                    wechatModal.style.display = 'none';
+                }, 300);
+            }
 
-            wechatQr.addEventListener('mouseleave', hideQrWithDelay)
+            wechatLink.addEventListener('click', showQR);
+
+            if (!isMobile) {
+                wechatLink.addEventListener('mouseenter', showQR);
+                wechatLink.addEventListener('mouseleave', hideQRWithDelay);
+                wechatQR.addEventListener('mouseenter', () => clearTimeout(qrTimeout));
+                wechatQR.addEventListener('mouseleave', hideQRWithDelay);
+            } else {
+                closeButton.addEventListener('click', hideModal);
+                wechatModal.addEventListener('click', (event) => {
+                    if (event.target === wechatModal) {
+                        hideModal();
+                    }
+                });
+            }
+
+            // 预加载二维码图片
+            const img = new Image();
+            img.src = '/img/wechat.jpg';
         </script>
     </body>
 </html>

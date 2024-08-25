@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>首页 - 宾顿华人协会</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Free Website Template" name="keywords" />
+        <meta content="Free Website Template" name="description" />
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/favicon.ico" rel="icon" />
 
         <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
         <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+        <link href="lib/animate/animate.min.css" rel="stylesheet" />
+        <link
+            href="lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet"
+        />
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />
 
         <style>
             /* 调整二维码的大小和位置 */
@@ -49,6 +61,51 @@
 
             .footer-link h2 {
                 text-align: right;
+            }
+
+            #wechat-modal {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                #wechat-qr {
+                    display: none !important;
+                }
+
+                #wechat-modal {
+                    display: none;
+                    z-index: 1000;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: white;
+                    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    text-align: center;
+                    transition: transform 0.3s ease-out;
+                    transform: translateY(100%);
+                }
+
+                #wechat-modal.show {
+                    transform: translateY(0);
+                    display: block;
+                }
+
+                #wechat-modal img {
+                    width: 172px;
+                    height: 229px;
+                    margin-bottom: 15px;
+                }
+
+                .close-button {
+                    position: absolute;
+                    color: black;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
             }
         </style>
     </head>
@@ -89,18 +146,37 @@
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand">
-                    <img src="img/logo.png" alt="Brampton Chinese Culture Association">
+                    <img
+                        src="img/logo.png"
+                        alt="Brampton Chinese Culture Association"
+                    />
                 </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <button
+                    type="button"
+                    class="navbar-toggler"
+                    data-toggle="collapse"
+                    data-target="#navbarCollapse"
+                >
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div
+                    class="collapse navbar-collapse justify-content-between"
+                    id="navbarCollapse"
+                >
                     <div class="navbar-nav ml-auto">
-                        <a href="index_zh.html" class="nav-item nav-link active">首页</a>
-                        <a href="about_zh.html" class="nav-item nav-link">关于我们</a>
-                        <a href="service_zh.html" class="nav-item nav-link">服务项目</a>
-                        <a href="event_zh.html" class="nav-item nav-link">近期活动</a>
+                        <a href="index_zh.html" class="nav-item nav-link active"
+                            >首页</a
+                        >
+                        <a href="about_zh.html" class="nav-item nav-link"
+                            >关于我们</a
+                        >
+                        <a href="service_zh.html" class="nav-item nav-link"
+                            >服务项目</a
+                        >
+                        <a href="event_zh.html" class="nav-item nav-link"
+                            >近期活动</a
+                        >
                         <!-- <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -112,14 +188,19 @@
                                 <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
                             </div>
                         </div> -->
-                        <a href="contact_zh.html" class="nav-item nav-link">联系我们</a>
-                        <a href="index.html" class="nav-item nav-link nav-language">English</a>
+                        <a href="contact_zh.html" class="nav-item nav-link"
+                            >联系我们</a
+                        >
+                        <a
+                            href="index.html"
+                            class="nav-item nav-link nav-language"
+                            >English</a
+                        >
                     </div>
                 </div>
             </div>
         </div>
         <!-- Nav Bar End -->
-
 
         <!-- Carousel Start -->
         <div class="carousel">
@@ -127,7 +208,7 @@
                 <div class="owl-carousel">
                     <div class="carousel-item">
                         <div class="carousel-img">
-                            <img src="img/carousel-1.jpg" alt="Image">
+                            <img src="img/carousel-1.jpg" alt="Image" />
                         </div>
                         <div class="carousel-text">
                             <h1>连接文化，共建社区.</h1>
@@ -135,14 +216,22 @@
                                 通过丰富的活动和有意义的交流，庆祝中华文化，促进社区融合。
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="#contact">加入我们</a>
-                                <a class="btn btn-custom btn-play" data-toggle="modal" data-src="img/dancing.mp4" data-target="#videoModal">观看视频</a>
+                                <a class="btn btn-custom" href="#contact"
+                                    >加入我们</a
+                                >
+                                <a
+                                    class="btn btn-custom btn-play"
+                                    data-toggle="modal"
+                                    data-src="img/dancing.mp4"
+                                    data-target="#videoModal"
+                                    >观看视频</a
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="carousel-img">
-                            <img src="img/carousel-2.jpg" alt="Image">
+                            <img src="img/carousel-2.jpg" alt="Image" />
                         </div>
                         <div class="carousel-text">
                             <h1>传承文化，塑造未来</h1>
@@ -150,14 +239,22 @@
                                 通过多样的活动和文化倡议，传承中华传统，创造团结的社区。
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="#contact">加入我们</a>
-                                <a class="btn btn-custom btn-play" data-toggle="modal" data-src="img/dancing.mp4" data-target="#videoModal">观看视频</a>
+                                <a class="btn btn-custom" href="#contact"
+                                    >加入我们</a
+                                >
+                                <a
+                                    class="btn btn-custom btn-play"
+                                    data-toggle="modal"
+                                    data-src="img/dancing.mp4"
+                                    data-target="#videoModal"
+                                    >观看视频</a
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="carousel-img">
-                            <img src="img/carousel-3.jpg" alt="Image">
+                            <img src="img/carousel-3.jpg" alt="Image" />
                         </div>
                         <div class="carousel-text">
                             <h1>促进融合，庆祝团结</h1>
@@ -165,8 +262,16 @@
                                 通过引人入胜的活动和丰富的体验，促进社区团结和文化融合。
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="#contact">加入我们</a>
-                                <a class="btn btn-custom btn-play" data-toggle="modal" data-src="img/dancing.mp4" data-target="#videoModal">观看视频</a>
+                                <a class="btn btn-custom" href="#contact"
+                                    >加入我们</a
+                                >
+                                <a
+                                    class="btn btn-custom btn-play"
+                                    data-toggle="modal"
+                                    data-src="img/dancing.mp4"
+                                    data-target="#videoModal"
+                                    >观看视频</a
+                                >
                             </div>
                         </div>
                     </div>
@@ -176,18 +281,30 @@
         <!-- Carousel End -->
 
         <!-- Video Modal Start -->
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div
+            class="modal fade"
+            id="videoModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="videoModalLabel"
+            aria-hidden="true"
+        >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="videoModalLabel">视频</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <video controls style="width: 100%;">
-                            <source src="" type="video/mp4">
+                        <video controls style="width: 100%">
+                            <source src="" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -195,7 +312,6 @@
             </div>
         </div>
         <!-- Video Modal End -->
-        
 
         <!-- About Start -->
         <div class="about home-about">
@@ -204,18 +320,21 @@
                 <div class="about-index">
                     <div class="container">
                         <div class="about-index-left">
-                            <h2>欢迎来到宾顿华人文化协会！我们是在加拿大注册的非盈利机构。</h2>
+                            <h2>
+                                欢迎来到宾顿华人文化协会！我们是在加拿大注册的非盈利机构。
+                            </h2>
                         </div>
                         <div class="about-index-right">
-                            <p>我们的使命是推广中华文化，促进不同族裔之间的文化交流，并支持华人融入加拿大社会。</p>
-                        </div>                        
+                            <p>
+                                我们的使命是推广中华文化，促进不同族裔之间的文化交流，并支持华人融入加拿大社会。
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- About index End -->
             </div>
         </div>
         <!-- About End -->
-
 
         <!-- Service Start -->
         <!-- <div class="service">
@@ -295,8 +414,7 @@
             </div>
         </div> -->
         <!-- Service End -->
-        
-        
+
         <!-- Facts Start -->
         <!-- <div class="facts" data-parallax="scroll" data-image-src="img/facts.jpg">
             <div class="container">
@@ -341,8 +459,7 @@
             </div>
         </div> -->
         <!-- Facts End -->
-        
-        
+
         <!-- Causes Start -->
         <!-- <div class="causes">
             <div class="container">
@@ -451,8 +568,7 @@
             </div>
         </div> -->
         <!-- Causes End -->
-        
-        
+
         <!-- Donate Start -->
         <!-- <div class="donate" data-parallax="scroll" data-image-src="img/donate.jpg">
             <div class="container">
@@ -500,8 +616,7 @@
             </div>
         </div> -->
         <!-- Donate End -->
-        
-        
+
         <!-- Event Start -->
         <div class="event">
             <div class="container">
@@ -512,47 +627,58 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src="img/event-1.jpg" alt="Image">
+                            <img src="img/event-1.jpg" alt="Image" />
                             <div class="event-content">
                                 <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>待定</p>
+                                    <p>
+                                        <i class="fa fa-calendar-alt"></i>待定
+                                    </p>
                                     <p><i class="far fa-clock"></i>待定</p>
-                                    <p><i class="fa fa-map-marker-alt"></i>待定</p>
+                                    <p>
+                                        <i class="fa fa-map-marker-alt"></i>待定
+                                    </p>
                                 </div>
                                 <div class="event-text">
                                     <h3>日常舞蹈训练</h3>
                                     <p>
                                         加入我们充满活力的舞蹈团，参加每日训练课程。不论你是初学者还是有经验的舞者，我们的课程旨在帮助你提升舞蹈技能，享受中国舞蹈的艺术。
                                     </p>
-                                    <a class="btn btn-custom" href="#contact">立即加入</a>
+                                    <a class="btn btn-custom" href="#contact"
+                                        >立即加入</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="event-item">
-                            <img src="img/event-2.jpg" alt="Image">
+                            <img src="img/event-2.jpg" alt="Image" />
                             <div class="event-content">
                                 <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>待定</p>
+                                    <p>
+                                        <i class="fa fa-calendar-alt"></i>待定
+                                    </p>
                                     <p><i class="far fa-clock"></i>待定</p>
-                                    <p><i class="fa fa-map-marker-alt"></i>待定</p>
+                                    <p>
+                                        <i class="fa fa-map-marker-alt"></i>待定
+                                    </p>
                                 </div>
                                 <div class="event-text">
                                     <h3>养老院表演</h3>
                                     <p>
                                         我们的合唱团和舞蹈团将在当地养老院表演，为居民们带来欢乐和娱乐。快来支持我们，通过音乐和舞蹈分享中华文化的美丽。
                                     </p>
-                                    <a class="btn btn-custom" href="#contact">立即加入</a>
+                                    <a class="btn btn-custom" href="#contact"
+                                        >立即加入</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
         <!-- Event End -->
-
 
         <!-- Team Start -->
         <div class="team">
@@ -630,8 +756,7 @@
             </div>
         </div>
         <!-- Team End -->
-        
-        
+
         <!-- Volunteer Start -->
         <!-- <div class="volunteer" data-parallax="scroll" data-image-src="img/volunteer.jpg">
             <div class="container">
@@ -671,8 +796,7 @@
             </div>
         </div> -->
         <!-- Volunteer End -->
-        
-        
+
         <!-- Testimonial Start -->
         <!-- <div class="testimonial">
             <div class="container">
@@ -741,47 +865,74 @@
             </div>
         </div>         -->
         <!-- Testimonial End -->
-        
-        
-    <!-- Contact Start -->
-    <div id="contact" class="contact">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>联系我们</p>
-                <h2>任何问题随时联系我们</h2>
-            </div>
-            <div class="contact-img">
-                <img src="img/contact.jpg" alt="图片">
-            </div>
-            <div class="contact-form">
-                <div id="success"></div>
-                <form id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="您的姓名" required="required" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="您的邮箱" required="required" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="主题" required="required" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="留言" required="required"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div>
-                        <button class="btn btn-custom" type="button" onclick="sendMail()">发送信息</button>
-                    </div>
-                </form>
+
+        <!-- Contact Start -->
+        <div id="contact" class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>联系我们</p>
+                    <h2>任何问题随时联系我们</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="img/contact.jpg" alt="图片" />
+                </div>
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                placeholder="您的姓名"
+                                required="required"
+                            />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="您的邮箱"
+                                required="required"
+                            />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="subject"
+                                placeholder="主题"
+                                required="required"
+                            />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                placeholder="留言"
+                                required="required"
+                            ></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button
+                                class="btn btn-custom"
+                                type="button"
+                                onclick="sendMail()"
+                            >
+                                发送信息
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Contact End -->
 
+        <!-- Contact End -->
 
         <!-- Blog Start -->
         <!-- <div class="blog">
@@ -847,19 +998,18 @@
         </div> -->
         <!-- Blog End -->
 
-
         <!-- Footer Start -->
         <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-contact">
-                            <h2>Brampton Chinese Cultural Association</h2>
+                            <h2>宾顿华人协会</h2>
                             <p>
                                 <i class="fa fa-map-marker-alt"></i>50 Kennedy
                                 Rd S, Brampton, On, Canada
                             </p>
-                            <p><i class="fa fa-phone-alt"></i>(647) 498-2828</p>
+                            <p><i class="fa fa-phone-alt"></i>(647) 498-2828 (text only)</p>
                             <p>
                                 <i class="fa fa-envelope"></i>bcca618@gmail.com
                             </p>
@@ -867,14 +1017,14 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-link">
-                            <h2>Popular Links</h2>
-                            <a href="">About Us</a>
-                            <a href="">Contact Us</a>
+                            <h2>链接</h2>
+                            <a href="./about_zh.html">关于我们</a>
+                            <a href="./contact_zh.html">联系我们</a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <div class="footer-link">
-                            <h2>Follow Us</h2>
+                            <h2>关注我们</h2>
                             <div class="social-icons">
                                 <a
                                     href="https://www.facebook.com/profile.php?id=100088570307661"
@@ -887,7 +1037,6 @@
                                 <a href="#" id="wechat-link">
                                     <i class="fab fa-weixin"></i>
                                 </a>
-                                <!-- WeChat QR code -->
                                 <img
                                     src="/img/wechat.jpg"
                                     id="wechat-qr"
@@ -896,6 +1045,10 @@
                             </div>
                         </div>
                     </div>
+                    <div id="wechat-modal">
+                        <span class="close-button">&times;</span>
+                        <img src="/img/wechat.jpg" alt="WeChat QR Code" />
+                    </div>
                 </div>
             </div>
             <div class="container copyright">
@@ -903,7 +1056,7 @@
                     <div class="col-md-6 text-left">
                         <p>
                             ©
-                            <a href="#"
+                            <a href=""
                                 >2024 - Brampton Chinese Cultural Association</a
                             >, All Right Reserved.
                         </p>
@@ -919,10 +1072,9 @@
         </div>
         <!-- Footer End -->
 
-        
         <!-- Back to top button -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
+
         <!-- Pre Loader -->
         <div id="loader" class="show">
             <div class="loader"></div>
@@ -936,10 +1088,10 @@
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/parallax/parallax.min.js"></script>
-        
+
         <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+        <!-- <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script> -->
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
@@ -954,100 +1106,130 @@
             $(document).ready(function () {
                 // Stop video playback when modal is closed
                 $('#videoModal').on('hidden.bs.modal', function () {
-                    var $this = $(this).find('video')[0];
+                    var $this = $(this).find('video')[0]
                     if ($this) {
-                        $this.pause();
-                        $this.currentTime = 0;
+                        $this.pause()
+                        $this.currentTime = 0
                     }
-                });
+                })
 
                 // Set the video source and play when modal is shown
                 $('#videoModal').on('show.bs.modal', function (e) {
-                    var videoSrc = $(e.relatedTarget).data('src');
-                    var $this = $(this).find('video')[0];
+                    var videoSrc = $(e.relatedTarget).data('src')
+                    var $this = $(this).find('video')[0]
                     if ($this) {
-                        $this.src = videoSrc;
-                        $this.play();
+                        $this.src = videoSrc
+                        $this.play()
                     }
-                });
-            });
+                })
+            })
         </script>
 
         <!-- 引入EmailJS -->
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <!-- 初始化EmailJS -->
         <script type="text/javascript">
-            (function() {
-                emailjs.init("ovyQ-pmRZ8Cxyrrvv"); // 替换为你的EmailJS用户ID
-            })();
+            ;(function () {
+                emailjs.init('ovyQ-pmRZ8Cxyrrvv') // 替换为你的EmailJS用户ID
+            })()
 
             function sendMail() {
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var subject = document.getElementById('subject').value;
-                var message = document.getElementById('message').value;
+                var name = document.getElementById('name').value
+                var email = document.getElementById('email').value
+                var subject = document.getElementById('subject').value
+                var message = document.getElementById('message').value
 
                 var templateParams = {
                     from_name: name,
                     from_email: email,
                     subject: subject,
-                    message: message
-                };
+                    message: message,
+                }
 
-                emailjs.send('service_hjx752r', 'template_sfus158', templateParams)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        alert('Mail sent successfully!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        alert('Mail sending failed: ' + error);
-                    });
+                emailjs
+                    .send('service_hjx752r', 'template_sfus158', templateParams)
+                    .then(
+                        function (response) {
+                            console.log(
+                                'SUCCESS!',
+                                response.status,
+                                response.text
+                            )
+                            alert('Mail sent successfully!')
+                        },
+                        function (error) {
+                            console.log('FAILED...', error)
+                            alert('Mail sending failed: ' + error)
+                        }
+                    )
             }
         </script>
 
         <!-- WeChat QR Code Display Script -->
         <script>
-            const wechatLink = document.getElementById('wechat-link')
-            const wechatQr = document.getElementById('wechat-qr')
-            let qrTimeout
+            const wechatLink = document.getElementById('wechat-link');
+            const wechatQR = document.getElementById('wechat-qr');
+            const wechatModal = document.getElementById('wechat-modal');
+            const closeButton = document.querySelector('.close-button');
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            let qrTimeout;
 
-            // Prevent default action of the WeChat link
-            wechatLink.addEventListener('click', (event) => {
-                event.preventDefault()
-            })
-
-            // Display QR code when hovering over WeChat link
-            wechatLink.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-                const rect = wechatLink.getBoundingClientRect()
-                wechatQr.style.display = 'block'
-                wechatQr.style.left = `${rect.right + 10}px` // 调整为图标的右侧显示，并留出10px间距
-                wechatQr.style.top = `${rect.top - 150}px` // 调整为图标的上方显示
-                setTimeout(() => {
-                    wechatQr.style.opacity = '1'
-                }, 10)
-            })
-
-            // 延迟隐藏二维码，防止闪烁
-            const hideQrWithDelay = () => {
-                qrTimeout = setTimeout(() => {
-                    wechatQr.style.opacity = '0'
+            function showQR(event) {
+                event.preventDefault();
+                if (isMobile) {
+                    wechatModal.style.display = 'block';
                     setTimeout(() => {
-                        wechatQr.style.display = 'none'
-                    }, 300)
-                }, 200)
+                        wechatModal.classList.add('show');
+                    }, 10);
+                } else {
+                    clearTimeout(qrTimeout);
+                    const rect = wechatLink.getBoundingClientRect();
+                    wechatQR.style.display = 'block';
+                    wechatQR.style.left = `${rect.right + 10}px`;
+                    wechatQR.style.top = `${rect.top - 150}px`;
+                    setTimeout(() => {
+                        wechatQR.style.opacity = '1';
+                    }, 10);
+                }
             }
 
-            // Hide QR code when leaving the WeChat link
-            wechatLink.addEventListener('mouseleave', hideQrWithDelay)
+            function hideQRWithDelay() {
+                if (!isMobile) {
+                    qrTimeout = setTimeout(() => {
+                        wechatQR.style.opacity = '0';
+                        setTimeout(() => {
+                            wechatQR.style.display = 'none';
+                        }, 300);
+                    }, 200);
+                }
+            }
 
-            // 防止鼠标在二维码和图标之间移动时闪烁
-            wechatQr.addEventListener('mouseenter', () => {
-                clearTimeout(qrTimeout)
-            })
+            function hideModal() {
+                wechatModal.classList.remove('show');
+                setTimeout(() => {
+                    wechatModal.style.display = 'none';
+                }, 300);
+            }
 
-            wechatQr.addEventListener('mouseleave', hideQrWithDelay)
+            wechatLink.addEventListener('click', showQR);
+
+            if (!isMobile) {
+                wechatLink.addEventListener('mouseenter', showQR);
+                wechatLink.addEventListener('mouseleave', hideQRWithDelay);
+                wechatQR.addEventListener('mouseenter', () => clearTimeout(qrTimeout));
+                wechatQR.addEventListener('mouseleave', hideQRWithDelay);
+            } else {
+                closeButton.addEventListener('click', hideModal);
+                wechatModal.addEventListener('click', (event) => {
+                    if (event.target === wechatModal) {
+                        hideModal();
+                    }
+                });
+            }
+
+            // 预加载二维码图片
+            const img = new Image();
+            img.src = '/img/wechat.jpg';
         </script>
-
     </body>
 </html>
